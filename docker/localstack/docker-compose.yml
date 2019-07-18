@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  # localstack for mocked AWS services
+  test-localstack:
+    image: localstack/localstack:latest
+    restart: always
+    ports:
+      - "${LOCAL_DYNAMODB_PORT}:${LOCAL_DYNAMODB_PORT}"
+    environment:
+      - DEBUG=${DEBUG- }
+      - DATA_DIR=${DATA_DIR- }
+      - PORT_WEB_UI=${PORT_WEB_UI- }
+      - SERVICES=dynamodb:${LOCAL_DYNAMODB_PORT}
+      - DEFAULT_REGION=${AWS_REGION}
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - test_local_network
+
+networks:
+  test_local_network:

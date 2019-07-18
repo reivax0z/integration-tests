@@ -1,0 +1,20 @@
+{
+  "TableName": "Person",
+  "Item": {
+    "createdDatetime": {
+      "S": "2019-05-21T00:58:35.669Z"
+    },
+    "PK": {
+      "S": "001-abc"
+    },
+    "SK": {
+      "S": "2019-05-21T00:58:35.669Z"
+    },
+    "type": {
+      "S": "person"
+    },
+    "username": {
+      "S": "john.doe_sample.com"
+    }
+  }
+}

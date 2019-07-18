@@ -1,0 +1,53 @@
+{
+  "name": "integration-tests",
+  "version": "1.0.0",
+  "description": "Sample project to demonstrate the use of integration tests",
+  "author": {
+    "name": "Xavier Caron",
+    "email": "xavier.w.caron@gmail.com"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "aws-sdk-mock": "2.0.0",
+    "dotenv": "^8.0.0",
+    "env-cmd": "^8.0.1",
+    "jest": "^22.4.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "^22.4.2",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.195.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "lodash": "4.17.10",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "winston": "^3.0.0-rc5"
+  },
+  "license": "ISC",
+  "engines": {
+    "node": "8.10.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run test:unit:coverage",
+    "test:integration": "env-cmd ./.env.test jest --config=\"jest-config-integration-tests.json\"",
+    "test:integration:coverage": "npm run test:integration -- --coverage",
+    "test:integration:seed-data": "env-cmd ./.env.test node test-integration/seed-data/seed-data.js",
+    "test:unit": "env-cmd ./.env.test jest --runInBand --config=\"jest-config-unit-tests.json\"",
+    "test:unit:coverage": "npm run test:unit -- --coverage"
+  }
+}

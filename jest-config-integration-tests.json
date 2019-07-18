@@ -1,0 +1,29 @@
+{
+  "clearMocks": true,
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.json"
+    }
+  },
+  "collectCoverageFrom": [
+    "dist/api/**",
+    "dist/routes/**",
+    "dist/services/**",
+    "dist/server*"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
+  },
+  "coverageDirectory": "coverage/integration",
+  "testEnvironment": "node",
+  "testRegex": "(/__tests__/.*|(\\.|/)(integration))\\.([jt]sx?)$",
+  "moduleFileExtensions": ["ts", "js"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  }
+}
