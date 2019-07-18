@@ -2,7 +2,7 @@ require('dotenv');
 import { scanResult } from './expected/persons.mock';
 
 const request = require('supertest');
-import { app } from '../../src/server';
+import { app } from '../../dist/server';
 
 describe('GIVEN the person endpoint is available', () => {
 

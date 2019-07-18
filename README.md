@@ -41,12 +41,21 @@ Run:
 make test
 ```
 
+Note that 80% coverage is enforced.
+
+
 ## Integration tests
 
 Run:
 ```
 make run-integration-test
 ```
+
+Note that 75% coverage is enforced.
+
+For more information about the tools used, see:
+- Docker setup [here](./docker/README.md)
+- Integration test suite [here](./test-integration/README.md)
 
 
 ## Environment variables

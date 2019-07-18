@@ -7,7 +7,6 @@ ___
 - [Pre-requisites](#pre-requisites)
 - [Start the mocked services](#start-the-mocked-services)
 - [Health-checks](#health-checks)
-  - [AWS Services](#aws-services)
 ___
 
 
@@ -44,8 +43,6 @@ docker-compose logs
 
 
 ## Health-checks
-
-### AWS services
 
 - To test if localstack and your tables are running:
 ```bash
